@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".SignupActivity"
+    android:orientation="vertical"
+    android:background="@color/purple_200"
+    android:padding="16dp">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/username"
+        android:drawableStart="@drawable/person"
+        android:drawablePadding="6dp"
+        android:inputType="text"
+        android:background="@drawable/round_corner"
+        android:backgroundTint="@color/white"
+        android:padding="12dp"
+        android:layout_marginTop="20dp"
+        android:textSize="18sp"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:id="@+id/username"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email Address"
+        android:drawableStart="@drawable/mail"
+        android:drawablePadding="6dp"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/round_corner"
+        android:backgroundTint="@color/white"
+        android:padding="12dp"
+        android:layout_marginTop="16dp"
+        android:textSize="18sp"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:id="@+id/emailAddress"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mobile Number"
+        android:drawableStart="@drawable/phone"
+        android:drawablePadding="6dp"
+        android:inputType="phone"
+        android:maxLength="10"
+        android:background="@drawable/round_corner"
+        android:backgroundTint="@color/white"
+        android:padding="12dp"
+        android:layout_marginTop="16dp"
+        android:textSize="18sp"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:id="@+id/mobile"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Delivery Address"
+        android:drawableStart="@drawable/location"
+        android:drawablePadding="6dp"
+        android:inputType="text"
+        android:background="@drawable/round_corner"
+        android:backgroundTint="@color/white"
+        android:padding="12dp"
+        android:layout_marginTop="16dp"
+        android:textSize="18sp"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:id="@+id/address"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/black"
+            tools:ignore="MissingConstraints"
+            app:hintEnabled="false"
+            android:id="@+id/passwordInputLayout">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Password"
+                android:drawableStart="@drawable/lock"
+                android:drawablePadding="6dp"
+                android:inputType="textWebPassword"
+                android:background="@drawable/round_corner"
+                android:backgroundTint="@color/white"
+                android:padding="12dp"
+                android:textSize="18sp"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:id="@+id/sPassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/black"
+            tools:ignore="MissingConstraints"
+            app:hintEnabled="false"
+            app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout"
+            android:layout_marginTop="16dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Confirm Password"
+                android:drawableStart="@drawable/lock"
+                android:drawablePadding="6dp"
+                android:inputType="textWebPassword"
+                android:background="@drawable/round_corner"
+                android:backgroundTint="@color/white"
+                android:padding="12dp"
+                android:textSize="18sp"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:id="@+id/confirmpassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/register"
+        android:background="@drawable/round_corner"
+        android:backgroundTint="#6d1b7b"
+        android:padding="12dp"
+        android:layout_marginTop="40dp"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:id="@+id/register"/>
+
+</LinearLayout>

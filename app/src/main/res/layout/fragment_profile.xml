@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileFragment"
+    tools:ignore="UseCompoundDrawables"
+    android:background="@color/purple_200"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:src="@drawable/profile_icon"
+        android:layout_gravity="center"
+        android:layout_marginTop="55dp"
+        android:contentDescription="@string/set_profile_icon" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_corner"
+            android:backgroundTint="@color/white"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:padding="12dp"
+            android:layout_marginTop="16dp"
+            android:drawablePadding="6dp"
+            android:id="@+id/username"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_corner"
+            android:backgroundTint="@color/white"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:padding="12dp"
+            android:layout_marginTop="16dp"
+            android:drawablePadding="6dp"
+            android:id="@+id/mobilenumber"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_corner"
+            android:backgroundTint="@color/white"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:padding="12dp"
+            android:layout_marginTop="16dp"
+            android:drawablePadding="6dp"
+            android:id="@+id/emailAddress"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_corner"
+            android:backgroundTint="@color/white"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:padding="12dp"
+            android:layout_marginTop="16dp"
+            android:drawablePadding="6dp"
+            android:id="@+id/address"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
