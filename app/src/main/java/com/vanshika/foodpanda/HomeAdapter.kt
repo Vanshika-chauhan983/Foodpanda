@@ -11,14 +11,15 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import java.math.RoundingMode
 
-class HomeAdapter(val context: Context, private var list: List<Hit>) :RecyclerView.Adapter<HomeAdapter.MyViewHolder>(){
+class HomeAdapter(val context: Context, private var list: List<Result>) :RecyclerView.Adapter<HomeAdapter.MyViewHolder>(){
 
     class MyViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView){
         var textView:TextView = itemView.findViewById(R.id.rv_textview)
         var textView2:TextView = itemView.findViewById(R.id.rv_textview2)
         var imageView:ImageView = itemView.findViewById(R.id.recyclerImage)
-        var viewcount:TextView = itemView.findViewById(R.id.viewcount)
+        var rating:TextView = itemView.findViewById(R.id.ratingtext)
         private var favoriteButton:ImageButton = itemView.findViewById(R.id.FavRestaurant)
 
         private val favoriteStates = mutableMapOf<Int, Boolean>()
@@ -54,15 +55,25 @@ class HomeAdapter(val context: Context, private var list: List<Hit>) :RecyclerVi
         return list.size
     }
 
-    @SuppressLint("ResourceType", "UseCompatLoadingForDrawables")
+    @SuppressLint("ResourceType", "UseCompatLoadingForDrawables", "SetTextI18n")
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = list[position]
         holder.bind(position)
-        holder.textView.text = currentItem.user
-        Glide.with(context).load(currentItem.largeImageURL).into(holder.imageView)
-        holder.viewcount.text = "${currentItem.views}"
-        holder.textView2.text = currentItem.tags
+        holder.textView.text = currentItem.name
+        Glide.with(context).load(currentItem.thumbnail_url).into(holder.imageView)
+        holder.textView2.text = "Rs. ${currentItem.price.total}"
+
+        fun multiply(): String {
+            var rating=currentItem.user_ratings.score.toBigDecimal().setScale(2,RoundingMode.FLOOR)
+            return (rating*10.toBigDecimal()).toString()
+
+        }
+
+        holder.rating.text = "${multiply()}/10"
     }
+
+
 }
+
 
 

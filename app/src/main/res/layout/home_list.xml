@@ -10,7 +10,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="120dp"
         tools:ignore="MissingConstraints"
         app:cardCornerRadius="15dp"
         app:cardElevation="7dp">
@@ -29,7 +29,7 @@
             </ImageView>
 
             <TextView
-                android:layout_width="200dp"
+                android:layout_width="195dp"
                 android:layout_height="wrap_content"
                 android:text="@string/text"
                 android:layout_toEndOf="@id/recyclerImage"
@@ -41,48 +41,62 @@
                 android:layout_marginTop="12dp"
                 android:id="@+id/rv_textview"/>
 
-            <TextView
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:text="@string/text"
-                android:layout_toEndOf="@id/recyclerImage"
-                android:layout_below="@+id/rv_textview"
-                android:textSize="16sp"
-                android:textColor="@color/black"
-                android:layout_marginStart="10dp"
-                android:padding="2dp"
-                android:id="@+id/rv_textview2"/>
-
-            <ImageView
-                android:id="@+id/views"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/views"
-                android:layout_toEndOf="@+id/rv_textview"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="12dp"/>
-
             <ImageButton
                 android:id="@+id/FavRestaurant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/fav_restaurant"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:layout_toEndOf="@+id/views"
+                android:layout_toEndOf="@id/rv_textview"
                 android:layout_marginTop="15dp"/>
 
             <TextView
-                android:id="@+id/viewcount"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:text="@string/text"
+                android:layout_toEndOf="@id/recyclerImage"
+                android:layout_below="@+id/rv_textview"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_marginStart="10dp"
+                android:padding="2dp"
+                android:id="@+id/rv_textview2"/>
+
+            <ImageView
+                android:id="@+id/rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@+id/rv_textview"
-                android:layout_below="@+id/FavRestaurant"
-                android:text="1.2k"
-                android:textColor="@color/black" />
+                android:layout_marginStart="12dp"
+                android:src="@drawable/rate"
+                android:layout_toEndOf="@id/FavRestaurant"
+                android:layout_marginTop="14dp">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/ratingtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8.9/10"
+                android:layout_toEndOf="@id/FavRestaurant"
+                android:layout_below="@+id/rating">
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ADD"
+                android:padding="8dp"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_marginTop="4dp"
+                android:layout_toEndOf="@id/rv_textview2"
+                android:layout_below="@+id/ratingtext"
+                android:background="@drawable/rating_shape">
+                
+            </TextView>
 
         </RelativeLayout>
-
-
 
     </androidx.cardview.widget.CardView>
 

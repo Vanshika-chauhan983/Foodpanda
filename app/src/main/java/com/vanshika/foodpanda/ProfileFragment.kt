@@ -52,6 +52,7 @@ class ProfileFragment : Fragment() {
 
     private fun fetchdata() {
         databaseReference.addListenerForSingleValueEvent(object : ValueEventListener {
+            @SuppressLint("SetTextI18n")
             override fun onDataChange(snapshot: DataSnapshot) {
                 val name=snapshot.child("name").getValue(String::class.java)
                 val number=snapshot.child("number").getValue(String::class.java)
@@ -60,7 +61,7 @@ class ProfileFragment : Fragment() {
 
 
                 textview1.text=name
-                textview2.text=number
+                textview2.text="+91 $number"
                 textview3.text=email
                 textview4.text=address
 

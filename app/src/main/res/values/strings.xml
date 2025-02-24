@@ -17,7 +17,7 @@
     <string name="register">Register</string>
     <string name="home">Home</string>
     <string name="my_profile">My Profile</string>
-    <string name="favourite_restaurants">Favourite Restaurants</string>
+    <string name="my_cart">My Cart</string>
     <string name="order_history">Order History</string>
     <string name="faqs">FAQs</string>
     <string name="log_out">Log Out</string>
@@ -43,4 +43,5 @@
     <string name="next">Next</string>
     <string name="display_app_icon">display app icon</string>
     <string name="submit1">SUBMIT</string>
+    <string name="welcome_to_foodpanda">Welcome to FoodPanda!</string>
 </resources>

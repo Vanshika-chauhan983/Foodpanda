@@ -37,21 +37,21 @@ class HomeFragment : Fragment() {
 
     private fun getData() {
         val retrofitBuilder = Retrofit.Builder()
-            .baseUrl("https://pixabay.com/")
+            .baseUrl("https://tasty.p.rapidapi.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-            .create(Flowers::class.java)
+            .create(Food::class.java)
 
         val retrofitData=retrofitBuilder.getImage()
 
-        retrofitData.enqueue(object : Callback<MyData>{
-            override fun onResponse(p0: Call<MyData>, p1: Response<MyData>) {
+        retrofitData.enqueue(object : Callback<FoodData>{
+            override fun onResponse(p0: Call<FoodData>, p1: Response<FoodData>) {
                 val responseBody=p1.body()
-                homeAdapter= HomeAdapter(activity as Context, responseBody!!.hits)
+                homeAdapter= HomeAdapter(activity as Context, responseBody!!.results)
                 recyclerView.adapter = homeAdapter
             }
 
-            override fun onFailure(p0: Call<MyData>, p1: Throwable) {
+            override fun onFailure(p0: Call<FoodData>, p1: Throwable) {
                 Log.d("message",p1.message.toString())
             }
         })

@@ -55,9 +55,12 @@
         android:id="@+id/navigation"
         app:itemTextColor="@color/black"
         app:itemIconTint="@color/purple_200"
-        app:itemIconSize="44dp"/>
+        app:itemIconSize="44dp">
+
+    </com.google.android.material.navigation.NavigationView>
 
 </androidx.drawerlayout.widget.DrawerLayout>
+
 
 
 

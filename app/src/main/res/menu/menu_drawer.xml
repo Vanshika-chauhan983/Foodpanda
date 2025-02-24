@@ -13,9 +13,9 @@
         android:icon="@drawable/profile"/>
 
     <item
-        android:title="@string/favourite_restaurants"
+        android:title="@string/my_cart"
         android:id="@+id/favourites"
-        android:icon="@drawable/favourite"/>
+        android:icon="@drawable/cart"/>
 
     <item
         android:title="@string/order_history"
