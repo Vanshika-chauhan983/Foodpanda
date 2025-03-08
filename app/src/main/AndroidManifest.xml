@@ -16,21 +16,24 @@
         android:theme="@style/Theme.FoodPanda"
         tools:targetApi="tiramisu">
         <activity
-            android:name=".ForgotPassword"
+            android:name=".CartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ForgotPassword"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".activities.HomeActivity"
             android:exported="false"
             android:label="All Restaurants"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".SignupActivity"
+            android:name=".activities.SignupActivity"
             android:exported="false"
             android:label="Register  Yourself"
             android:theme="@style/Theme.AppCompat.DayNight" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".activities.LoginActivity"
             android:exported="true"
             android:theme="@style/Theme.FoodPanda">
             <intent-filter>

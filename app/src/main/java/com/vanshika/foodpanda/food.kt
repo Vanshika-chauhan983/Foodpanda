@@ -1,5 +1,6 @@
 package com.vanshika.foodpanda
 
+import com.vanshika.foodpanda.DataClasses.FoodData
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Headers

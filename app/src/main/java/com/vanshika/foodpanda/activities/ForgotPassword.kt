@@ -1,4 +1,4 @@
-package com.vanshika.foodpanda
+package com.vanshika.foodpanda.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

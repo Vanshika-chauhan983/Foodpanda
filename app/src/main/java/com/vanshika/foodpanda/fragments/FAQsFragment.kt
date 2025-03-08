@@ -1,4 +1,4 @@
-package com.vanshika.foodpanda
+package com.vanshika.foodpanda.fragments
 
 import android.animation.LayoutTransition
 import android.annotation.SuppressLint
@@ -11,6 +11,8 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import com.vanshika.foodpanda.DataClasses.FaqData
+import com.vanshika.foodpanda.R
 
 class FAQsFragment : Fragment() {
 

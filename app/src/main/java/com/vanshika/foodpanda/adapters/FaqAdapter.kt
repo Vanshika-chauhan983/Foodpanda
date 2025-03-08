@@ -1,4 +1,4 @@
-package com.vanshika.foodpanda
+package com.vanshika.foodpanda.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.vanshika.foodpanda.DataClasses.FaqData
+import com.vanshika.foodpanda.R
 
 class FaqAdapter(val context: Context, private val FaqList:List<FaqData>) : RecyclerView.Adapter<FaqAdapter.ViewHolder>() {
 
