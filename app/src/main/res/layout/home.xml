@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:visibility="visible"
-    tools:context=".HomeActivity"
+    tools:context=".activities.HomeActivity"
     tools:visibility="visible"
     android:background="@color/purple_200">
 

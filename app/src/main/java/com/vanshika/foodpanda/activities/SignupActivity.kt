@@ -1,4 +1,4 @@
-package com.vanshika.foodpanda
+package com.vanshika.foodpanda.activities
 
 import android.content.Context
 import android.content.Intent
@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.vanshika.foodpanda.DataClasses.User
 import com.vanshika.foodpanda.databinding.SignupBinding
 
 
@@ -18,7 +19,6 @@ class SignupActivity : AppCompatActivity() {
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var database: DatabaseReference
     lateinit var id:String
-    private lateinit var profileSharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +42,6 @@ class SignupActivity : AppCompatActivity() {
                         firebaseAuth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener{
                             if (it.isSuccessful){
                                 id=it.result.user?.uid ?:""
-                                storeValue("uid",id)
                                 signupSuccess(id)
                             }
                             else{
@@ -65,6 +64,7 @@ class SignupActivity : AppCompatActivity() {
     }
 
     fun signupSuccess(id:String){
+
         val username = binding.username.text.toString()
         val mobileNumber=binding.mobile.text.toString()
         val delivery = binding.address.text.toString()
@@ -72,7 +72,7 @@ class SignupActivity : AppCompatActivity() {
         val pass = binding.sPassword.text.toString()
 
         database=FirebaseDatabase.getInstance().getReference("User")
-        val user=User(username,email,mobileNumber,delivery,pass)
+        val user= User(username,email,mobileNumber,delivery,pass)
         database.child(id).setValue(user).addOnSuccessListener {
 
             binding.username.text.clear()
@@ -87,13 +87,9 @@ class SignupActivity : AppCompatActivity() {
 
             Toast.makeText(this,"Failed!", Toast.LENGTH_SHORT).show()
         }
-        val intent=Intent(this,LoginActivity::class.java)
+        val intent=Intent(this, LoginActivity::class.java)
         startActivity(intent)
     }
 
-    fun storeValue(uid: String,value: String){
-        profileSharedPreferences=getSharedPreferences("mypref",Context.MODE_PRIVATE)
-        profileSharedPreferences.edit().putString(uid,value).apply()
-    }
 
 }

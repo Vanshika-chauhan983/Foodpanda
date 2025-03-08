@@ -51,7 +51,7 @@
                 android:layout_marginTop="15dp"/>
 
             <TextView
-                android:layout_width="220dp"
+                android:layout_width="210dp"
                 android:layout_height="wrap_content"
                 android:text="@string/text"
                 android:layout_toEndOf="@id/recyclerImage"
@@ -59,6 +59,7 @@
                 android:textSize="18sp"
                 android:textColor="@color/black"
                 android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
                 android:padding="2dp"
                 android:id="@+id/rv_textview2"/>
 
@@ -81,11 +82,11 @@
                 android:layout_below="@+id/rating">
             </TextView>
 
-            <TextView
-                android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/addBtn"
+                android:layout_width="70dp"
                 android:layout_height="wrap_content"
-                android:text="ADD"
-                android:padding="8dp"
+                android:text="@string/add"
                 android:textStyle="bold"
                 android:textSize="18sp"
                 android:textColor="@color/white"
@@ -93,8 +94,7 @@
                 android:layout_toEndOf="@id/rv_textview2"
                 android:layout_below="@+id/ratingtext"
                 android:background="@drawable/rating_shape">
-                
-            </TextView>
+            </Button>
 
         </RelativeLayout>
 

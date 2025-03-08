@@ -1,10 +1,11 @@
-package com.vanshika.foodpanda
+package com.vanshika.foodpanda.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.vanshika.foodpanda.R
 
 class HistoryFragment : Fragment() {
 

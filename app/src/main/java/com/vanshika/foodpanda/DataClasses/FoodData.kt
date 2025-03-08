@@ -1,4 +1,4 @@
-package com.vanshika.foodpanda
+package com.vanshika.foodpanda.DataClasses
 
 data class FoodData(
     val count: Int,

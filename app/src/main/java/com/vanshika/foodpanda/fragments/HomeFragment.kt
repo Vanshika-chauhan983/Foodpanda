@@ -1,4 +1,4 @@
-package com.vanshika.foodpanda
+package com.vanshika.foodpanda.fragments
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -8,9 +8,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.vanshika.foodpanda.Food
+import com.vanshika.foodpanda.DataClasses.FoodData
+import com.vanshika.foodpanda.R
+import com.vanshika.foodpanda.adapters.HomeAdapter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
