@@ -2,7 +2,6 @@ package com.vanshika.foodpanda.adapters
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.SharedPreferences
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,7 +21,6 @@ import com.vanshika.foodpanda.DataClasses.CartData
 import com.vanshika.foodpanda.DataClasses.Result
 import com.vanshika.foodpanda.R
 import java.math.RoundingMode
-
 
 class HomeAdapter(val context: Context, private var list: List<Result>) :RecyclerView.Adapter<HomeAdapter.MyViewHolder>(){
 
