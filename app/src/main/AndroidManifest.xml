@@ -16,9 +16,6 @@
         android:theme="@style/Theme.FoodPanda"
         tools:targetApi="tiramisu">
         <activity
-            android:name=".CartActivity"
-            android:exported="false" />
-        <activity
             android:name=".activities.ForgotPassword"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
@@ -42,6 +39,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
+        <receiver
+            android:name="com.razorpay.RzpTokenReceiver"
+            tools:replace="android:exported"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="rzp.device_token.share" />
+            </intent-filter>
+        </receiver>
 
+        <activity
+            android:name="com.razorpay.CheckoutActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            tools:replace="android:exported"
+            android:theme="@style/CheckoutTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <data
+                    android:host="rzp.io"
+                    android:scheme="io.rzp" />
+            </intent-filter>
+        </activity>
+    </application>
 </manifest>

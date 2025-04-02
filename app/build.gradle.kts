@@ -69,6 +69,7 @@ dependencies {
     implementation("com.google.firebase:firebase-auth:21.0.0")
     implementation("com.google.firebase:firebase-database:21.0.0")
     implementation("com.ms-square:expandableTextView:0.1.4")
+    implementation("com.razorpay:checkout:1.6.40")
     //noinspection GradleCompatible
     implementation("androidx.databinding:databinding-runtime:8.8.1")
     implementation("com.github.bumptech.glide:glide:4.16.0")

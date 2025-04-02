@@ -28,26 +28,36 @@ class LoginActivity : ComponentActivity() {
             val email = binding.email.text.toString()
             val password = binding.lPassword.text.toString()
 
-            if (email.isNotEmpty() && password.isNotEmpty()) {
-                if (password.length >= 6) {
-                    binding.btnLogin.isEnabled = false
-                    firebaseAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener{
-                        if (it.isSuccessful) {
+            if (email.isEmpty()) {
+                binding.email.error = "Email is required!"
+                return@setOnClickListener
+            }
+
+            if (password.isEmpty()) {
+                binding.lPassword.error = "Password is required!"
+                return@setOnClickListener
+            }
+
+            if (password.length >= 6) {
+                binding.btnLogin.isEnabled = false
+                firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
+                    if (it.isSuccessful) {
+
+                        if (firebaseAuth.currentUser?.isEmailVerified == true) {
                             val intent = Intent(this, HomeActivity::class.java)
                             startActivity(intent)
+                            finish()
+                        } else {
+                            Toast.makeText(this, "Please verify email!", LENGTH_SHORT).show()
                         }
-                        else{
-                            Toast.makeText(this, it.exception?.message ,LENGTH_SHORT).show()
-                        }
-                        binding.btnLogin.isEnabled = true
+                    } else {
+                        Toast.makeText(this, it.exception?.message, LENGTH_SHORT).show()
                     }
+                    binding.btnLogin.isEnabled = true
                 }
-                else {
-                    Toast.makeText(this, "Password must contain atleast 6 characters!", LENGTH_SHORT).show()
-                }
-            }
-            else {
-                Toast.makeText(this, "Empty fields are not allowed!", LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Password must contain atleast 6 characters!", LENGTH_SHORT)
+                    .show()
             }
         }
 
@@ -65,9 +75,11 @@ class LoginActivity : ComponentActivity() {
     override fun onStart() {
         super.onStart()
         if (firebaseAuth.currentUser != null) {
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
-            finish()
+            if (firebaseAuth.currentUser?.isEmailVerified == true) {
+                val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
         }
     }
 }
