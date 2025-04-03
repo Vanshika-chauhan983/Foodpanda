@@ -30,15 +30,6 @@
     <string name="recyclerimage">recyclerimage</string>
     <string name="text">text</string>
     <string name="applogo">applogo</string>
-    <string name="faqText1">Browse the menu, select the items you want, customize them if needed, and add them to your cart. When ready, tap Checkout, choose your delivery address, and confirm the payment method.</string>
-    <string name="faqText2">We accept credit/debit cards, mobile wallets, cash on delivery, and other popular payment methods in your region.</string>
-    <string name="faqText3">After placing your order, you can track it in real-time under the "My Orders" section of the app.</string>
-    <string name="faqText4">Yes! Many menu items can be customized. Tap on the item and select options like toppings, portion size, or extras.</string>
-    <string name="faqText5">Orders can be canceled only before they are accepted by the restaurant. Go to "My Orders," select the order, and tap "Cancel."</string>
-    <string name="faqText6">If there’s an issue with your order, contact our support team through the app with details, and we’ll investigate and process a refund if applicable.</string>
-    <string name="faqText7">If the order hasn’t been picked up by the delivery partner, you can update the address by contacting support through the app.</string>
-    <string name="faqText8">Use the in-app chat feature or email us at support@yourapp.com for help with your queries.</string>
-    <string name="faqText9">Absolutely! Rate your experience and provide feedback after your order is delivered through the "Rate &amp; Review" section.</string>
     <string name="forgot_email_address">Email Address</string>
     <string name="next">Next</string>
     <string name="display_app_icon">display app icon</string>

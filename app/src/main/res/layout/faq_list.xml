@@ -1,49 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    tools:context=".fragments.FAQsFragment"
-    android:padding="12dp">
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginVertical="3dp"
+    app:cardCornerRadius="10dp"
+    app:cardUseCompatPadding="true"
+    tools:context=".fragments.FAQsFragment">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/expandable"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="20dp"
-        app:contentPadding="20dp"
-        app:cardElevation="10dp">
+        android:layout_height="match_parent"
+        android:padding="8dp">
 
-        <LinearLayout
-            android:id="@+id/layout"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:animateLayoutChanges="true"
-            android:orientation="vertical">
+            tools:ignore="MissingConstraints">
 
             <TextView
+                android:id="@+id/question_text"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:text="How do I place an order?"
-                android:textSize="18sp"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-                android:id="@+id/smallText"/>
-
-            <TextView
-                android:id="@+id/detailText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/faqText1"
                 android:textSize="18sp"
-                android:visibility="gone"
-                android:textColor="@color/black"/>
+                android:textStyle="bold"
+                android:padding="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <TextView
+            android:id="@+id/answer_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:text="Browse the menu, select the items you want, customize them if needed, and add them to your cart. When ready, tap Checkout, choose your delivery address, and confirm the payment method."
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/constraint_layout"
+            tools:ignore="MissingConstraints" />
 
-    </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</LinearLayout>
+</androidx.cardview.widget.CardView>

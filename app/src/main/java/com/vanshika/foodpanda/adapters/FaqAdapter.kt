@@ -5,15 +5,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.vanshika.foodpanda.DataClasses.FaqData
 import com.vanshika.foodpanda.R
 
 class FaqAdapter(val context: Context, private val FaqList:List<FaqData>) : RecyclerView.Adapter<FaqAdapter.ViewHolder>() {
+    class ViewHolder(itemview:View) : RecyclerView.ViewHolder(itemview){
+        val questiontv:TextView=itemview.findViewById(R.id.question_text)
+        val answertv:TextView=itemview.findViewById(R.id.answer_text)
+        val constraintLayout:ConstraintLayout=itemview.findViewById(R.id.constraint_layout)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemView=LayoutInflater.from(parent.context).inflate(R.layout.faq_list,parent,false)
-        return ViewHolder(itemView)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.faq_list,parent,false)
+        return ViewHolder(view)
     }
 
     override fun getItemCount(): Int {
@@ -21,13 +27,16 @@ class FaqAdapter(val context: Context, private val FaqList:List<FaqData>) : Recy
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val currentItem=FaqList[position]
-        holder.question.text= currentItem.quesList
-        holder.answer.text=currentItem.ansList
-    }
+        val currentItem = FaqList[position]
+        holder.questiontv.text=currentItem.question
+        holder.answertv.text= currentItem.answer.toString()
 
-    class ViewHolder(itemView:View): RecyclerView.ViewHolder(itemView) {
-        val question=itemView.findViewById<TextView>(R.id.smallText)
-        val answer=itemView.findViewById<TextView>(R.id.detailText)
+        var isExpandable:Boolean=currentItem.isExpanded
+        holder.answertv.visibility=if (isExpandable) View.VISIBLE else View.GONE
+
+        holder.constraintLayout.setOnClickListener{
+            currentItem.isExpanded=!currentItem.isExpanded
+            notifyItemChanged(position)
+        }
     }
 }
