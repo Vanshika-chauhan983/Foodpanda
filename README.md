@@ -5,10 +5,15 @@ This project allows users to browse food items fetched from a third-party API, a
 # Features
 
 **User Authentication** – Secure sign-up and login using Firebase Authentication.
+
 **Food Menu Display** – Food items fetched from an external API and shown using RecyclerView inside a Fragment.
+
 **Cart System** – Add, view, and remove food items from the cart (synced with Firebase Realtime Database).
+
 **User Profile** – Display and manage user information.
+
 **Fragment Navigation** – Used Fragments to navigate between different screens of the app.
+
 **Firebase Integration** – Real-time sync and storage of cart data using Firebase.
 
 # Tech Stack
