@@ -19,8 +19,13 @@ This project allows users to browse food items fetched from a third-party API, a
 # Tech Stack
 
 **Language:** Kotlin
+
 **UI:** XML Layouts, Fragments, RecyclerView
+
 **Database:** Firebase Realtime Database
+
 **Authentication:** Firebase Authentication
+
 **API:** Retrofit for fetching food data
+
 **Libraries:** Glide (for image loading), Firebase SDKs
