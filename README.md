@@ -29,3 +29,12 @@ This project allows users to browse food items fetched from a third-party API, a
 **API:** Retrofit for fetching food data
 
 **Libraries:** Glide (for image loading), Firebase SDKs
+
+## Screenshots
+
+### Home Screen
+<img src="screenshots/home_screen.png" width="300">
+
+### Cart Screen
+<img src="screenshots/cart_screen.png" width="300">
+
