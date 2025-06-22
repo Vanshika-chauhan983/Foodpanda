@@ -35,11 +35,11 @@ This project allows users to browse food items fetched from a third-party API, a
 ### Home Screen
 <img src="screenshots/home_screen.png" width="300">
 
-### Cart Screen
-<img src="screenshots/cart_screen.png" width="300">
-
 ### Navigation Screen
 <img src="screenshots/navigation_screen.png" width="300">
+
+### Cart Screen
+<img src="screenshots/cart_screen.png" width="300">
 
 ### Profile Screen
 <img src="screenshots/profile_screen.png" width="300">
